@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日英语单词 - 2026-03-26</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #e8e8e8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #a8d8ea;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #a8d8ea 0%, #aa96da 50%, #fcbad3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .theme-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: white;
+            margin-top: 15px;
+        }
+
+        .word-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .word-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #a8d8ea 0%, #aa96da 100%);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(168, 216, 234, 0.3);
+        }
+
+        .word-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .word-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .word-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .word-phonetic {
+            font-size: 16px;
+            color: #a8d8ea;
+            margin-left: 15px;
+            font-family: 'Georgia', serif;
+        }
+
+        .word-meaning {
+            font-size: 20px;
+            color: #fcbad3;
+            margin-bottom: 15px;
+            padding-left: 51px;
+        }
+
+        .word-section {
+            padding-left: 51px;
+        }
+
+        .word-example {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-left: 3px solid #aa96da;
+        }
+
+        .word-example-label {
+            font-size: 12px;
+            color: #aa96da;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .word-example-en {
+            font-size: 16px;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        .word-example-zh {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .word-tip {
+            background: linear-gradient(135deg, rgba(168, 216, 234, 0.1) 0%, rgba(170, 150, 218, 0.1) 100%);
+            border-radius: 12px;
+            padding: 15px 20px;
+            border: 1px solid rgba(168, 216, 234, 0.2);
+        }
+
+        .word-tip-label {
+            font-size: 12px;
+            color: #a8d8ea;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .word-tip-text {
+            font-size: 15px;
+            color: #c8c8c8;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer span {
+            color: #aa96da;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date-badge">📅 2026年3月26日 · 周四</div>
+            <h1>每日英语单词</h1>
+            <div class="theme-tag">💭 情绪表达</div>
+        </div>
+
+        <div class="word-card">
+            <div class="word-header">
+                <div class="word-number">1</div>
+                <div class="word-text">anxious</div>
+                <div class="word-phonetic">/ˈæŋkʃəs/</div>
+            </div>
+            <div class="word-meaning">adj. 焦虑的，担忧的</div>
+            <div class="word-section">
+                <div class="word-example">
+                    <div class="word-example-label">📝 例句</div>
+                    <div class="word-example-en">"I'm anxious about the job interview tomorrow."</div>
+                    <div class="word-example-zh">我对明天的工作面试感到焦虑。</div>
+                </div>
+                <div class="word-tip">
+                    <div class="word-tip-label">💡 记忆提示</div>
+                    <div class="word-tip-text">anxious = anxi(弯曲、紧张) + ous(形容词后缀) → 心里拧成一团的感受。谐音："安克休斯" → 内心不安需要安抚。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="word-card">
+            <div class="word-header">
+                <div class="word-number">2</div>
+                <div class="word-text">frustrated</div>
+                <div class="word-phonetic">/frʌˈstreɪtɪd/</div>
+            </div>
+            <div class="word-meaning">adj. 沮丧的，挫败的</div>
+            <div class="word-section">
+                <div class="word-example">
+                    <div class="word-example-label">📝 例句</div>
+                    <div class="word-example-en">"I got frustrated when my code wouldn't run."</div>
+                    <div class="word-example-zh">代码跑不通时，我感到很挫败。</div>
+                </div>
+                <div class="word-tip">
+                    <div class="word-tip-label">💡 记忆提示</div>
+                    <div class="word-tip-text">frustrate = frustr(欺骗、挫败) + ed → 努力被白费的感觉。记住搭配：feel frustrated / get frustrated。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="word-card">
+            <div class="word-header">
+                <div class="word-number">3</div>
+                <div class="word-text">relieved</div>
+                <div class="word-phonetic">/rɪˈliːvd/</div>
+            </div>
+            <div class="word-meaning">adj. 松了口气的，放心的</div>
+            <div class="word-section">
+                <div class="word-example">
+                    <div class="word-example-label">📝 例句</div>
+                    <div class="word-example-en">"I was relieved to hear that the project was approved."</div>
+                    <div class="word-example-zh">听到项目获批的消息，我松了一口气。</div>
+                </div>
+                <div class="word-tip">
+                    <div class="word-tip-label">💡 记忆提示</div>
+                    <div class="word-tip-text">relieve = re(再次) + lieve(轻) → 让重担变轻。relieved 就是"压力被卸下"后的感受。常见搭配：feel relieved, be relieved to see。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="word-card">
+            <div class="word-header">
+                <div class="word-number">4</div>
+                <div class="word-text">overwhelmed</div>
+                <div class="word-phonetic">/ˌoʊvərˈwelmd/</div>
+            </div>
+            <div class="word-meaning">adj. 压力山大的，不堪重负的</div>
+            <div class="word-section">
+                <div class="word-example">
+                    <div class="word-example-label">📝 例句</div>
+                    <div class="word-example-en">"She felt overwhelmed by the amount of work."</div>
+                    <div class="word-example-zh">面对堆积如山的工作，她感到不堪重负。</div>
+                </div>
+                <div class="word-tip">
+                    <div class="word-tip-label">💡 记忆提示</div>
+                    <div class="word-tip-text">over(超过) + whelm(压倒) → 被压倒。形容被任务/情绪淹没的感觉，比 "busy" 更强调心理上的无力感。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="word-card">
+            <div class="word-header">
+                <div class="word-number">5</div>
+                <div class="word-text">grateful</div>
+                <div class="word-phonetic">/ˈɡreɪtfl/</div>
+            </div>
+            <div class="word-meaning">adj. 感激的，感谢的</div>
+            <div class="word-section">
+                <div class="word-example">
+                    <div class="word-example-label">📝 例句</div>
+                    <div class="word-example-en">"I'm so grateful for your help with this project."</div>
+                    <div class="word-example-zh">非常感谢你对这个项目的帮助。</div>
+                </div>
+                <div class="word-tip">
+                    <div class="word-tip-label">💡 记忆提示</div>
+                    <div class="word-tip-text">grateful = grate(感谢) + ful(充满...的) → 心里装满感谢。比 thank you 更正式、更真诚，适合写邮件或正式场合。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>WorkBuddy</span> · 每日英语单词 · 记得复习哦！
+        </div>
+    </div>
+</body>
+</html>

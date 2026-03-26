@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日英语单词 | 2026年3月18日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        header .date {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .word-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+        }
+
+        .word-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .word-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .word-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .word-phonetic {
+            font-family: 'Segoe UI', sans-serif;
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        .word-pos {
+            display: inline-block;
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .section {
+            margin: 25px 0;
+            padding-left: 20px;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .definition {
+            color: #2d3748;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .example {
+            background: #f7fafc;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .example-en {
+            color: #2d3748;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .example-cn {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .collocations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .collocation-tag {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            color: #4c51bf;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .memory-tip {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            position: relative;
+        }
+
+        .memory-tip::before {
+            content: "💡";
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .memory-tip-title {
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 8px;
+        }
+
+        .memory-tip-content {
+            color: #78350f;
+            font-size: 0.95rem;
+        }
+
+        .synonyms {
+            margin-top: 15px;
+        }
+
+        .synonyms span {
+            display: inline-block;
+            background: #e6fffa;
+            color: #234e52;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin: 3px 5px;
+        }
+
+        .etymology {
+            font-size: 0.9rem;
+            color: #4a5568;
+            font-style: italic;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+
+        .oxford-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .word-card {
+                padding: 25px;
+            }
+            
+            .word-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 每日英语单词</h1>
+            <p class="subtitle">生活 & 社交常用词汇</p>
+            <span class="date">2026年3月18日 · 周三</span>
+        </header>
+
+        <!-- Word 1: apologize -->
+        <article class="word-card">
+            <div class="word-header">
+                <span class="word-number">1</span>
+                <h2 class="word-title">apologize</h2>
+                <span class="word-phonetic">/əˈpɒlədʒaɪz/ <span style="color:#a0aec0;">英</span> &nbsp; /əˈpɑːlədʒaɪz/ <span style="color:#a0aec0;">美</span></span>
+                <span class="word-pos">verb</span>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Oxford Definition</div>
+                <p class="definition">To say that you are sorry for doing something wrong or causing a problem. <strong>因做错事或引发问题而表示歉意。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"I sincerely apologize for the delay."</p>
+                    <p class="example-cn">我为延误诚挚道歉。</p>
+                </div>
+                
+                <div class="example">
+                    <p class="example-en">"He apologized profusely to his family."</p>
+                    <p class="example-cn">他向家人连连道歉。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Grammar & Usage</div>
+                <p class="definition">Usually used as an <strong>intransitive verb</strong> (不及物动词). Common patterns:</p>
+                <div class="collocations">
+                    <span class="collocation-tag">apologize to sb</span>
+                    <span class="collocation-tag">apologize for sth</span>
+                    <span class="collocation-tag">apologize to sb for sth</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Synonyms</div>
+                <div class="synonyms">
+                    <span>say sorry</span>
+                    <span>express regret</span>
+                    <span>make an apology</span>
+                </div>
+            </div>
+
+            <div class="etymology">
+                <strong>词源 Etymology:</strong> From Greek <em>apologizesthai</em> (to defend oneself), originally meaning "to speak in one's own defense," later evolving to express regret.
+            </div>
+
+            <div class="memory-tip">
+                <div class="memory-tip-title">记忆小提示</div>
+                <div class="memory-tip-content">联想 "a + policy（政策）+ ize" — 公司出了问题要出台"政策"来处理，就是在正式道歉。核心词根 <strong>apolog-</strong> 来自希腊语，意为"为自己辩护/解释"。</div>
+            </div>
+        </article>
+
+        <!-- Word 2: grateful -->
+        <article class="word-card">
+            <div class="word-header">
+                <span class="word-number">2</span>
+                <h2 class="word-title">grateful</h2>
+                <span class="word-phonetic">/ˈɡreɪtfl/</span>
+                <span class="word-pos">adjective</span>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Oxford Definition</div>
+                <p class="definition"><strong>1.</strong> Feeling or showing thanks because somebody has done something kind for you or has done as you asked. <strong>因某人为你做了好事或应你所求而表示感谢的。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"We are very grateful to all those who contributed."</p>
+                    <p class="example-cn">我们非常感谢所有提供帮助的人。</p>
+                </div>
+
+                <p class="definition" style="margin-top: 20px;"><strong>2.</strong> Used to make a request, especially in a letter or in a formal situation. <strong>用于正式场合或书信中表示礼貌请求。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"I would be grateful if you could send the completed form back as soon as possible."</p>
+                    <p class="example-cn">如您能尽快将填好的表格寄回，我将不胜感激。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Common Patterns</div>
+                <div class="collocations">
+                    <span class="collocation-tag">grateful to sb</span>
+                    <span class="collocation-tag">grateful for sth</span>
+                    <span class="collocation-tag">grateful to sb for sth</span>
+                    <span class="collocation-tag">grateful that...</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Word Family</div>
+                <div class="synonyms">
+                    <span>gratefully (adv.)</span>
+                    <span>gratitude (n.)</span>
+                    <span>ungrateful (adj. 反义词)</span>
+                </div>
+            </div>
+
+            <div class="etymology">
+                <strong>词源 Etymology:</strong> Mid 16th century, from obsolete <em>grate</em> (pleasing, thankful, from Latin <em>gratus</em>) + <em>-ful</em>.
+            </div>
+
+            <div class="memory-tip">
+                <div class="memory-tip-title">记忆小提示</div>
+                <div class="memory-tip-content"><strong>grate</strong>（感激）+ <strong>-ful</strong>（充满）= 内心充满感激。也可以联想 "Great + ful" — 觉得对方做的事情很 "great"，所以你心存感激！</div>
+            </div>
+        </article>
+
+        <!-- Word 3: hesitate -->
+        <article class="word-card">
+            <div class="word-header">
+                <span class="word-number">3</span>
+                <h2 class="word-title">hesitate</h2>
+                <span class="word-phonetic">/ˈhezɪteɪt/</span>
+                <span class="word-pos">verb</span>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Oxford Definition</div>
+                <p class="definition"><strong>1.</strong> To be slow to speak or act because you feel uncertain or nervous. <strong>因不确定或紧张而说话或行动迟缓。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"She hesitated before replying."</p>
+                    <p class="example-cn">她回答前犹豫了一下。</p>
+                </div>
+
+                <p class="definition" style="margin-top: 20px;"><strong>2.</strong> To be worried about doing something, especially because you are not sure that it is right or appropriate. <strong>担心做某事，尤因不确定是否恰当。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"Please do not hesitate to contact me."</p>
+                    <p class="example-cn">请随时联系我（不要犹豫）。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Common Patterns</div>
+                <div class="collocations">
+                    <span class="collocation-tag">hesitate to do sth</span>
+                    <span class="collocation-tag">hesitate about/over sth</span>
+                    <span class="collocation-tag">hesitate between A and B</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Word Family</div>
+                <div class="synonyms">
+                    <span>hesitant (adj.)</span>
+                    <span>hesitantly (adv.)</span>
+                    <span>hesitation (n.)</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Proverb</div>
+                <div class="example">
+                    <p class="example-en">"He who hesitates (is lost)."</p>
+                    <p class="example-cn">犹豫者败；机不可失，时不再来。</p>
+                </div>
+            </div>
+
+            <div class="etymology">
+                <strong>词源 Etymology:</strong> Early 17th century, from Latin <em>haesitat-</em> (stuck, undecided), from <em>haesitare</em> (to stick, remain fixed).
+            </div>
+
+            <div class="memory-tip">
+                <div class="memory-tip-title">记忆小提示</div>
+                <div class="memory-tip-content">谐音记忆：<strong>"黑死他"</strong> — 想起某人令你犹豫不定，就像被"黑死"在原地，动弹不得。或者联想词根 <strong>hesit-</strong> = stick（粘住），被粘住了就无法前进，只能犹豫。</div>
+            </div>
+        </article>
+
+        <!-- Word 4: overwhelmed -->
+        <article class="word-card">
+            <div class="word-header">
+                <span class="word-number">4</span>
+                <h2 class="word-title">overwhelmed</h2>
+                <span class="word-phonetic">/ˌoʊvəˈwelmd/</span>
+                <span class="word-pos">adjective</span>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Oxford Definition (from overwhelm)</div>
+                <p class="definition"><strong>1.</strong> To have such a strong emotional effect on somebody that it is difficult for them to resist or know how to react. <strong>（情绪上）使难以承受；使不知所措。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"She was overwhelmed by feelings of guilt."</p>
+                    <p class="example-cn">她被内疚感淹没了。</p>
+                </div>
+
+                <div class="example">
+                    <p class="example-en">"The beauty of the landscape overwhelmed me."</p>
+                    <p class="example-cn">风景之美让我震撼不已。</p>
+                </div>
+
+                <p class="definition" style="margin-top: 20px;"><strong>2.</strong> To defeat somebody completely. <strong>彻底击败；压倒。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"The army was overwhelmed by the rebels."</p>
+                    <p class="example-cn">军队被叛军彻底击溃。</p>
+                </div>
+
+                <p class="definition" style="margin-top: 20px;"><strong>3.</strong> To be given too much of something; to have too many things to deal with. <strong>（因数量或强度过大）使应接不暇；使负担过重。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"We were overwhelmed by requests for information."</p>
+                    <p class="example-cn">信息请求让我们应接不暇。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Common Patterns</div>
+                <div class="collocations">
+                    <span class="collocation-tag">be overwhelmed by sth</span>
+                    <span class="collocation-tag">be overwhelmed with sth</span>
+                    <span class="collocation-tag">feel overwhelmed</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Word Family</div>
+                <div class="synonyms">
+                    <span>overwhelm (v.)</span>
+                    <span>overwhelming (adj.)</span>
+                    <span>overwhelmingly (adv.)</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Synonyms</div>
+                <div class="synonyms">
+                    <span>overcome (情感上)</span>
+                    <span>overpower (击败)</span>
+                    <span>flood (淹没)</span>
+                </div>
+            </div>
+
+            <div class="etymology">
+                <strong>词源 Etymology:</strong> From <strong>over</strong> (超过) + <strong>whelm</strong> (古英语，意为"覆盖、淹没"). Originally meant to turn something upside down or cover completely.
+            </div>
+
+            <div class="memory-tip">
+                <div class="memory-tip-title">记忆小提示</div>
+                <div class="memory-tip-content"><strong>over</strong>（超过）+ <strong>whelm</strong>（淹没）= 被超量淹没了。想象海浪 <em>over</em> 你，把你完全 whelm（淹）掉，自然就不知所措了。这个词完美描述了现代人面对工作压力时的状态！</div>
+            </div>
+        </article>
+
+        <!-- Word 5: compromise -->
+        <article class="word-card">
+            <div class="word-header">
+                <span class="word-number">5</span>
+                <h2 class="word-title">compromise</h2>
+                <span class="word-phonetic">/ˈkɒmprəmaɪz/ <span style="color:#a0aec0;">英</span> &nbsp; /ˈkɑːmprəmaɪz/ <span style="color:#a0aec0;">美</span></span>
+                <span class="word-pos">noun / verb</span>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Oxford Definition (Noun)</div>
+                <p class="definition"><strong>1.</strong> An agreement made between two people or groups in which each side gives up some of the things they want so that both sides are happy at the end. <strong>妥协；和解协议。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"After lengthy talks, the two sides finally reached a compromise."</p>
+                    <p class="example-cn">经过漫长的谈判，双方最终达成了妥协。</p>
+                </div>
+
+                <p class="definition" style="margin-top: 20px;"><strong>2.</strong> A solution to a problem in which two or more things cannot exist together as they are, in which each thing is reduced or changed slightly so that they can exist together. <strong>（对立观点或需求间的）折中方案。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"This model represents the best compromise between price and quality."</p>
+                    <p class="example-cn">这款型号代表了价格与质量之间的最佳折中。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Oxford Definition (Verb)</div>
+                <p class="definition"><strong>1.</strong> To give up some of your demands after a disagreement with somebody, in order to reach an agreement. <strong>妥协，让步。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"Neither side is prepared to compromise."</p>
+                    <p class="example-cn">双方都不愿妥协。</p>
+                </div>
+
+                <p class="definition" style="margin-top: 20px;"><strong>2.</strong> To do something that is against your principles or does not reach standards that you have set. <strong>违背原则，降低标准。</strong></p>
+                
+                <div class="example">
+                    <p class="example-en">"I refuse to compromise my principles."</p>
+                    <p class="example-cn">我拒绝违背自己的原则。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Common Patterns</div>
+                <div class="collocations">
+                    <span class="collocation-tag">reach/arrive at a compromise</span>
+                    <span class="collocation-tag">compromise on sth</span>
+                    <span class="collocation-tag">compromise between A and B</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Synonyms</div>
+                <div class="synonyms">
+                    <span>agreement</span>
+                    <span>concession</span>
+                    <span>settlement</span>
+                </div>
+            </div>
+
+            <div class="etymology">
+                <strong>词源 Etymology:</strong> From Middle English, via Old French <em>compromis</em> and Latin <em>compromissum</em> (mutual promise to abide by arbitration), from <strong>com-</strong> (together) + <strong>promittere</strong> (to promise).
+            </div>
+
+            <div class="memory-tip">
+                <div class="memory-tip-title">记忆小提示</div>
+                <div class="memory-tip-content"><strong>com</strong>（共同）+ <strong>promise</strong>（承诺）= 双方各退一步、共同做出承诺 = 妥协。生活中很多事，不是非赢即输，而是找到 compromise。记住：妥协不是失败，而是智慧！</div>
+            </div>
+        </article>
+
+        <footer class="footer">
+            <p>每日学习，积少成多 · Keep Learning, Keep Growing</p>
+            <div class="oxford-badge">
+                <span>📖</span>
+                <span>Definitions based on Oxford Advanced Learner's Dictionary</span>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">数据来源：牛津大学出版社 - 牛津高阶学习者词典</p>
+        </footer>
+    </div>
+</body>
+</html>

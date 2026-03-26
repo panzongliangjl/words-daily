@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>每日英语 · 2026-03-24</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f7e9 0%, #b2f0d5 40%, #c3e8ff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 16px 60px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    header .date-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 6px 22px;
+      font-size: 13px;
+      color: #4a8c6a;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #1b8a5e, #0a7fc0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    header p.subtitle {
+      margin-top: 8px;
+      color: #5a8a70;
+      font-size: 15px;
+    }
+
+    .theme-tag {
+      display: inline-block;
+      margin-top: 12px;
+      background: linear-gradient(90deg, #1b8a5e, #0a9f88);
+      color: white;
+      border-radius: 50px;
+      padding: 4px 18px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 26px 28px;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 6px 24px rgba(0,120,80,0.08);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 5px;
+      height: 100%;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .card:nth-child(1)::before { background: linear-gradient(180deg, #43c97e, #1b8a5e); }
+    .card:nth-child(2)::before { background: linear-gradient(180deg, #4ab8f5, #0a7fc0); }
+    .card:nth-child(3)::before { background: linear-gradient(180deg, #f5a742, #e07b1a); }
+    .card:nth-child(4)::before { background: linear-gradient(180deg, #e06aba, #a8209c); }
+    .card:nth-child(5)::before { background: linear-gradient(180deg, #7b85f5, #3a45d0); }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,120,80,0.14);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .word {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1a3a2a;
+      letter-spacing: 0.5px;
+    }
+
+    .phonetic {
+      font-size: 0.95rem;
+      color: #6a9a80;
+      font-style: italic;
+    }
+
+    .pos {
+      font-size: 0.78rem;
+      background: #e8f5ee;
+      color: #2a7a50;
+      border-radius: 50px;
+      padding: 2px 10px;
+      font-weight: 600;
+    }
+
+    .meaning {
+      font-size: 1.1rem;
+      color: #2d5a3f;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #8aaa96;
+      margin-bottom: 4px;
+      margin-top: 12px;
+    }
+
+    .example {
+      font-size: 0.95rem;
+      color: #3a5a48;
+      line-height: 1.7;
+    }
+
+    .example em {
+      font-style: normal;
+      color: #1b8a5e;
+      font-weight: 600;
+    }
+
+    .translation {
+      font-size: 0.88rem;
+      color: #6a8a78;
+      margin-top: 4px;
+    }
+
+    .tip-box {
+      margin-top: 14px;
+      background: linear-gradient(90deg, rgba(27,138,94,0.08), rgba(10,127,192,0.06));
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .tip-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .tip-text {
+      font-size: 0.88rem;
+      color: #2d6a50;
+      line-height: 1.6;
+    }
+
+    .tip-text strong {
+      color: #1b8a5e;
+    }
+
+    .number-badge {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #aac8b8;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #7aaa8a;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    footer a {
+      color: #1b8a5e;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="date-badge">📅 2026 年 3 月 24 日 · 星期二</div>
+    <h1>每日英语 · 5 个实用单词</h1>
+    <p class="subtitle">每天一小步，英语进步看得见</p>
+    <span class="theme-tag">🥦 今日主题：饮食健康</span>
+  </header>
+
+  <div class="cards">
+
+    <!-- 单词 1 -->
+    <div class="card">
+      <div class="number-badge">01</div>
+      <div class="card-header">
+        <span class="word">nutritious</span>
+        <span class="phonetic">/njuːˈtrɪʃəs/</span>
+        <span class="pos">adj.</span>
+      </div>
+      <div class="meaning">营养丰富的；滋补的</div>
+      <div class="section-label">例句</div>
+      <div class="example">A <em>nutritious</em> breakfast gives you energy for the whole day.</div>
+      <div class="translation">营养丰富的早餐能为你一整天提供能量。</div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆提示：</strong>nutri- 联想"营养"(nutrition)，-ious 是形容词后缀。营养 → nutritious，一看就懂！</div>
+      </div>
+    </div>
+
+    <!-- 单词 2 -->
+    <div class="card">
+      <div class="number-badge">02</div>
+      <div class="card-header">
+        <span class="word">moderate</span>
+        <span class="phonetic">/ˈmɒdərɪt/</span>
+        <span class="pos">adj. / v.</span>
+      </div>
+      <div class="meaning">适度的；有节制的 / 使缓和</div>
+      <div class="section-label">例句</div>
+      <div class="example"><em>Moderate</em> exercise and a balanced diet are key to staying healthy.</div>
+      <div class="translation">适度运动和均衡饮食是保持健康的关键。</div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆提示：</strong>mode（方式）+ rate（比率）→ 按比率控制方式 → 适度。中文说"适中"，英文就说 moderate！</div>
+      </div>
+    </div>
+
+    <!-- 单词 3 -->
+    <div class="card">
+      <div class="number-badge">03</div>
+      <div class="card-header">
+        <span class="word">hydrated</span>
+        <span class="phonetic">/ˈhaɪdreɪtɪd/</span>
+        <span class="pos">adj.</span>
+      </div>
+      <div class="meaning">补充了水分的；水合的</div>
+      <div class="section-label">例句</div>
+      <div class="example">Make sure you stay <em>hydrated</em> during the summer heat.</div>
+      <div class="translation">夏天高温时一定要保持水分充足。</div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆提示：</strong>hydro- 是"水"的前缀（如 hydrogen 氢），hydrated 就是"加了水"的状态。多喝水 = stay hydrated！</div>
+      </div>
+    </div>
+
+    <!-- 单词 4 -->
+    <div class="card">
+      <div class="number-badge">04</div>
+      <div class="card-header">
+        <span class="word">ingredient</span>
+        <span class="phonetic">/ɪnˈɡriːdiənt/</span>
+        <span class="pos">n.</span>
+      </div>
+      <div class="meaning">食材；原料；成分</div>
+      <div class="section-label">例句</div>
+      <div class="example">The secret <em>ingredient</em> in her soup is a pinch of ginger.</div>
+      <div class="translation">她汤里的秘密食材是少许姜。</div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆提示：</strong>in-（进入）+ gredi（走）→ "走进去的东西" → 放进锅里的食材！做菜/配方都用这个词，非常实用。</div>
+      </div>
+    </div>
+
+    <!-- 单词 5 -->
+    <div class="card">
+      <div class="number-badge">05</div>
+      <div class="card-header">
+        <span class="word">portion</span>
+        <span class="phonetic">/ˈpɔːrʃn/</span>
+        <span class="pos">n.</span>
+      </div>
+      <div class="meaning">（食物的）份量；一部分</div>
+      <div class="section-label">例句</div>
+      <div class="example">Try to control your <em>portion</em> size when eating out.</div>
+      <div class="translation">外出用餐时，尽量控制摄入的份量。</div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆提示：</strong>想象餐厅菜单上写着 "Single Portion"（单人份）。控制体重的关键词之一：<strong>portion control</strong>（控制份量）！</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div>📚 累计已学 · 3月第4周 · 主题系列：旅行 → 饮食健康</div>
+    <div>坚持每天学习，英语自然而然就好了 ✨</div>
+  </footer>
+
+</body>
+</html>

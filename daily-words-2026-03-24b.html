@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>每日英语 · 2026-03-24（补充版）</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 40%, #ffd6e0 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 16px 60px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    header .date-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 6px 22px;
+      font-size: 13px;
+      color: #c0392b;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2c1810;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(252,182,159,0.4);
+    }
+
+    header .theme-tag {
+      display: inline-block;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #e74c3c, #e67e22);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+
+    .cards-container {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 28px 32px;
+      box-shadow: 0 8px 32px rgba(231,76,60,0.10), 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid rgba(255,255,255,0.7);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(180deg, #e74c3c, #e67e22);
+      border-radius: 20px 0 0 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(231,76,60,0.18), 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card-number {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: rgba(231,76,60,0.10);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .word {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #c0392b;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .phonetic {
+      font-size: 1rem;
+      color: #e67e22;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .pos-tag {
+      display: inline-block;
+      background: linear-gradient(90deg, #e74c3c22, #e67e2222);
+      color: #c0392b;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(192,57,43,0.2);
+    }
+
+    .meaning {
+      font-size: 1.05rem;
+      color: #2c1810;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(231,76,60,0.2), transparent);
+      margin: 12px 0;
+    }
+
+    .example {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .example .en {
+      color: #2c1810;
+      font-weight: 500;
+    }
+
+    .example .zh {
+      color: #888;
+      font-size: 0.87rem;
+      margin-top: 3px;
+      font-style: normal;
+    }
+
+    .tip-box {
+      margin-top: 14px;
+      background: linear-gradient(90deg, #fff3e0, #fce4d6);
+      border-left: 3px solid #e67e22;
+      border-radius: 0 10px 10px 0;
+      padding: 10px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .tip-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .tip-text {
+      font-size: 0.87rem;
+      color: #6d3d14;
+      line-height: 1.55;
+    }
+
+    footer {
+      margin-top: 44px;
+      text-align: center;
+      color: rgba(44,24,16,0.45);
+      font-size: 12.5px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="date-badge">📅 2026年3月24日 · 购物消费专题</div>
+    <h1>每日英语 5 词</h1>
+    <span class="theme-tag">🛍️ 购物消费</span>
+  </header>
+
+  <div class="cards-container">
+
+    <!-- 单词 1 -->
+    <div class="card">
+      <div class="card-number">01</div>
+      <div class="word">bargain</div>
+      <div class="phonetic">/ˈbɑːrɡɪn/</div>
+      <span class="pos-tag">n. / v.</span>
+      <div class="meaning">📖 便宜货；砍价，讨价还价</div>
+      <div class="divider"></div>
+      <div class="example">
+        <div class="en">"I found a real <strong>bargain</strong> at the market — this jacket was only ¥50!"</div>
+        <div class="zh">我在市场上捡到了大便宜——这件夹克只要50元！</div>
+      </div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆技巧：</strong>"bargain" 联想成"把金"——把金子（钱）省下来，就是砍到了好价格！</div>
+      </div>
+    </div>
+
+    <!-- 单词 2 -->
+    <div class="card">
+      <div class="card-number">02</div>
+      <div class="word">refund</div>
+      <div class="phonetic">/ˈriːfʌnd/</div>
+      <span class="pos-tag">n. / v.</span>
+      <div class="meaning">📖 退款；退还（金钱）</div>
+      <div class="divider"></div>
+      <div class="example">
+        <div class="en">"The item was damaged, so I asked for a full <strong>refund</strong>."</div>
+        <div class="zh">商品损坏了，所以我要求全额退款。</div>
+      </div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆技巧：</strong>"re-" 是"重新"，"fund" 是"资金"——资金重新回到你手里 = 退款。网购退货时最常用！</div>
+      </div>
+    </div>
+
+    <!-- 单词 3 -->
+    <div class="card">
+      <div class="card-number">03</div>
+      <div class="word">receipt</div>
+      <div class="phonetic">/rɪˈsiːt/</div>
+      <span class="pos-tag">n.</span>
+      <div class="meaning">📖 收据，小票</div>
+      <div class="divider"></div>
+      <div class="example">
+        <div class="en">"Please keep your <strong>receipt</strong> in case you need to return the product."</div>
+        <div class="zh">请保留好您的收据，以备退货时使用。</div>
+      </div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆技巧：</strong>注意拼写陷阱！"receipt" 中的 "p" 不发音（像 "re-SEET"）。联想：收到（receive）东西，就会有 receipt。</div>
+      </div>
+    </div>
+
+    <!-- 单词 4 -->
+    <div class="card">
+      <div class="card-number">04</div>
+      <div class="word">discount</div>
+      <div class="phonetic">/ˈdɪskaʊnt/</div>
+      <span class="pos-tag">n. / v.</span>
+      <div class="meaning">📖 折扣；打折</div>
+      <div class="divider"></div>
+      <div class="example">
+        <div class="en">"Members get a 20% <strong>discount</strong> on all purchases this weekend."</div>
+        <div class="zh">本周末会员所有购物享受八折优惠。</div>
+      </div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆技巧：</strong>"dis-"（减少）+ "count"（计数/金额）= 减少金额 = 折扣。听到 "discount" 就想到价格下降！</div>
+      </div>
+    </div>
+
+    <!-- 单词 5 -->
+    <div class="card">
+      <div class="card-number">05</div>
+      <div class="word">warranty</div>
+      <div class="phonetic">/ˈwɔːrənti/</div>
+      <span class="pos-tag">n.</span>
+      <div class="meaning">📖 保修，质保；担保书</div>
+      <div class="divider"></div>
+      <div class="example">
+        <div class="en">"This laptop comes with a two-year <strong>warranty</strong>. Keep the certificate safe."</div>
+        <div class="zh">这台笔记本享有两年质保，请妥善保管保修凭证。</div>
+      </div>
+      <div class="tip-box">
+        <span class="tip-icon">💡</span>
+        <div class="tip-text"><strong>记忆技巧：</strong>联想"沃伦提"——沃尔玛给你提供保修，就是 warranty！买电子产品必备词。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    WorkBuddy · 每日英语推送 &nbsp;|&nbsp; 坚持学习，每天进步一点点 ✨
+  </footer>
+
+</body>
+</html>
