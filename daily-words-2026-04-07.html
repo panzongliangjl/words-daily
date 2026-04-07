@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日英语单词 - 2026-04-07</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 36px;
+            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header .emoji-top {
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .header h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            color: #a0b4cc;
+            margin-bottom: 6px;
+        }
+
+        .header .date-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            color: #0a0a1a;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+
+        .theme-tag {
+            display: inline-block;
+            background: rgba(79, 172, 254, 0.15);
+            border: 1px solid rgba(79, 172, 254, 0.4);
+            color: #4facfe;
+            font-size: 0.85rem;
+            padding: 4px 14px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        /* Word Card */
+        .word-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 28px 28px 24px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .word-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px;
+            height: 100%;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .word-card:nth-child(1)::before { background: linear-gradient(180deg, #4facfe, #00f2fe); }
+        .word-card:nth-child(2)::before { background: linear-gradient(180deg, #43e97b, #38f9d7); }
+        .word-card:nth-child(3)::before { background: linear-gradient(180deg, #fa709a, #fee140); }
+        .word-card:nth-child(4)::before { background: linear-gradient(180deg, #a18cd1, #fbc2eb); }
+        .word-card:nth-child(5)::before { background: linear-gradient(180deg, #ffecd2, #fcb69f); }
+
+        .word-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .word-number {
+            position: absolute;
+            top: 20px; right: 22px;
+            font-size: 2rem;
+            font-weight: 900;
+            opacity: 0.08;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .word-header {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .word-en {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .word-phonetic {
+            font-size: 0.92rem;
+            color: #7eb8f7;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        .word-pos {
+            display: inline-block;
+            background: rgba(79, 172, 254, 0.2);
+            border: 1px solid rgba(79, 172, 254, 0.35);
+            color: #7eb8f7;
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 8px;
+        }
+
+        .word-zh {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #d4e6f1;
+            margin-bottom: 14px;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+            margin: 14px 0;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6b8aad;
+            margin-bottom: 6px;
+        }
+
+        .example-en {
+            font-size: 0.95rem;
+            color: #c8daf0;
+            line-height: 1.65;
+            margin-bottom: 4px;
+        }
+
+        .example-zh {
+            font-size: 0.88rem;
+            color: #8fb0cc;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .tip-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(255, 230, 100, 0.08);
+            border: 1px solid rgba(255, 230, 100, 0.2);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-top: 6px;
+        }
+
+        .tip-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .tip-text {
+            font-size: 0.87rem;
+            color: #ffd97a;
+            line-height: 1.6;
+        }
+
+        /* Footer nav */
+        .footer-nav {
+            text-align: center;
+            margin-top: 32px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-nav a {
+            color: #4facfe;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 16px;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 20px;
+            transition: background 0.2s;
+        }
+
+        .footer-nav a:hover {
+            background: rgba(79, 172, 254, 0.15);
+        }
+
+        .footer-note {
+            font-size: 0.78rem;
+            color: #4a6a88;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <span class="emoji-top">💼</span>
+        <h1>每日英语单词</h1>
+        <div class="subtitle">Daily Vocabulary · 5 Words a Day</div>
+        <div class="date-badge">2026年4月7日 · 周二</div>
+        <br>
+        <span class="theme-tag">📌 今日主题：职场沟通进阶</span>
+    </div>
+
+    <!-- Word 1: clarify -->
+    <div class="word-card">
+        <div class="word-number">01</div>
+        <div class="word-header">
+            <span class="word-en">clarify</span>
+            <span class="word-phonetic">/ˈklærɪfaɪ/</span>
+            <span class="word-pos">v. 动词</span>
+        </div>
+        <div class="word-zh">澄清；阐明；使清楚</div>
+        <div class="divider"></div>
+        <div class="section-label">📝 例句</div>
+        <div class="example-en">Could you clarify what you mean by "urgent"? Is it today or by end of week?</div>
+        <div class="example-zh">你说的"紧急"是什么意思？是今天还是本周末之前？</div>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">记忆技巧：<strong>clar</strong>（来自拉丁语"清晰"，如 clear）+ <strong>-ify</strong>（使变为……）= 使事情清晰。开会时最常用！</span>
+        </div>
+    </div>
+
+    <!-- Word 2: collaborate -->
+    <div class="word-card">
+        <div class="word-number">02</div>
+        <div class="word-header">
+            <span class="word-en">collaborate</span>
+            <span class="word-phonetic">/kəˈlæbəreɪt/</span>
+            <span class="word-pos">v. 动词</span>
+        </div>
+        <div class="word-zh">合作；协作</div>
+        <div class="divider"></div>
+        <div class="section-label">📝 例句</div>
+        <div class="example-en">We need to collaborate more closely with the design team to meet the deadline.</div>
+        <div class="example-zh">我们需要与设计团队更紧密地协作，以赶上截止日期。</div>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">记忆技巧：<strong>co-</strong>（共同）+ <strong>labor</strong>（劳动）= 共同劳动 → 合作。名词是 <em>collaboration</em>，形容词是 <em>collaborative</em>，都要认识！</span>
+        </div>
+    </div>
+
+    <!-- Word 3: initiative -->
+    <div class="word-card">
+        <div class="word-number">03</div>
+        <div class="word-header">
+            <span class="word-en">initiative</span>
+            <span class="word-phonetic">/ɪˈnɪʃətɪv/</span>
+            <span class="word-pos">n. 名词</span>
+        </div>
+        <div class="word-zh">主动性；主动权；新举措</div>
+        <div class="divider"></div>
+        <div class="section-label">📝 例句</div>
+        <div class="example-en">She took the initiative to schedule the meeting rather than waiting to be asked.</div>
+        <div class="example-zh">她主动安排了会议，而不是等待别人来问。</div>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">记忆技巧：<strong>take the initiative</strong>（主动出击）是职场高频搭配。老板最喜欢"有 initiative"的员工，记住这个词等于记住一个好评价！</span>
+        </div>
+    </div>
+
+    <!-- Word 4: constructive -->
+    <div class="word-card">
+        <div class="word-number">04</div>
+        <div class="word-header">
+            <span class="word-en">constructive</span>
+            <span class="word-phonetic">/kənˈstrʌktɪv/</span>
+            <span class="word-pos">adj. 形容词</span>
+        </div>
+        <div class="word-zh">建设性的；有益的</div>
+        <div class="divider"></div>
+        <div class="section-label">📝 例句</div>
+        <div class="example-en">Thank you for your constructive feedback — it really helped us improve the proposal.</div>
+        <div class="example-zh">感谢您的建设性反馈——它真的帮助我们改进了方案。</div>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">记忆技巧：<strong>construct</strong>（建造）→ <strong>constructive</strong>（像建造一样有帮助的）。<em>constructive criticism</em>（建设性批评）是绩效评估中的万能词！</span>
+        </div>
+    </div>
+
+    <!-- Word 5: proactive -->
+    <div class="word-card">
+        <div class="word-number">05</div>
+        <div class="word-header">
+            <span class="word-en">proactive</span>
+            <span class="word-phonetic">/prəʊˈæktɪv/</span>
+            <span class="word-pos">adj. 形容词</span>
+        </div>
+        <div class="word-zh">积极主动的；预防性的</div>
+        <div class="divider"></div>
+        <div class="section-label">📝 例句</div>
+        <div class="example-en">A proactive employee doesn't just wait for problems — they anticipate and solve them in advance.</div>
+        <div class="example-zh">积极主动的员工不只是等待问题出现——他们会提前预判并解决问题。</div>
+        <div class="tip-box">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">记忆技巧：<strong>pro-</strong>（提前、向前）+ <strong>active</strong>（行动的）= 提前行动。对比 <em>reactive</em>（被动应对）——职场最高评价就是从 reactive 进化到 proactive！</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-nav">
+        <a href="daily-words-2026-03-27.html">← 2026-03-27</a>
+        <div class="footer-note">每天5个单词 · 坚持积累 · 持续进步 🌱</div>
+    </div>
+
+</div>
+</body>
+</html>
