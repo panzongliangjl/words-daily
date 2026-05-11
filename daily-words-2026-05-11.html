@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日英语单词 · 2026-05-11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06091a;
+      --card-bg: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #e8eef8;
+      --muted: #6b7a99;
+      --accent: #7eb8f7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Noto Sans SC", -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at 15% 10%, rgba(80,120,255,0.13) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 90%, rgba(120,80,255,0.10) 0%, transparent 55%),
+        url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='80' r='1.2' fill='%23ffffff18'/%3E%3Ccircle cx='180' cy='30' r='0.8' fill='%23ffffff12'/%3E%3Ccircle cx='320' cy='110' r='1.5' fill='%23ffffff15'/%3E%3Ccircle cx='480' cy='55' r='0.9' fill='%23ffffff10'/%3E%3Ccircle cx='560' cy='200' r='1.1' fill='%23ffffff14'/%3E%3Ccircle cx='90' cy='300' r='0.7' fill='%23ffffff10'/%3E%3Ccircle cx='250' cy='400' r='1.3' fill='%23ffffff12'/%3E%3Ccircle cx='420' cy='350' r='0.8' fill='%23ffffff0e'/%3E%3Ccircle cx='540' cy='450' r='1.0' fill='%23ffffff13'/%3E%3Ccircle cx='130' cy='520' r='1.4' fill='%23ffffff11'/%3E%3C/svg%3E");
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+
+    /* Header */
+    .header { text-align: center; margin-bottom: 48px; }
+    .header-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 16px;
+      background: rgba(126,184,247,0.1);
+      border: 1px solid rgba(126,184,247,0.2);
+      border-radius: 100px;
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 18px;
+    }
+    .header h1 {
+      font-family: "Noto Serif SC", serif;
+      font-size: 30px; font-weight: 700;
+      background: linear-gradient(135deg, #fff 0%, #a0b4d0 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .header-meta { font-size: 13px; color: var(--muted); }
+    .header-meta span { color: rgba(126,184,247,0.7); margin: 0 6px; }
+
+    /* Summary bar */
+    .summary {
+      background: rgba(126,184,247,0.06);
+      border: 1px solid rgba(126,184,247,0.15);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 13px; color: rgba(200,220,255,0.75);
+      margin-bottom: 32px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* Word Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .card-stripe { height: 5px; width: 100%; }
+    .card-body { padding: 24px 28px 22px; }
+
+    .word-row { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+    .word {
+      font-family: "Noto Serif SC", serif;
+      font-size: 26px; font-weight: 700; color: #fff;
+    }
+    .phonetic { font-size: 14px; color: var(--muted); letter-spacing: 0.5px; }
+    .pos {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      padding: 3px 10px; border-radius: 100px;
+      background: rgba(255,255,255,0.07);
+      color: rgba(200,220,255,0.6);
+      text-transform: uppercase;
+    }
+
+    .meaning {
+      font-size: 15px; color: rgba(220,235,255,0.85);
+      margin: 10px 0 16px; line-height: 1.6;
+    }
+    .meaning strong { color: #fff; }
+
+    .example {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+    }
+    .example .en {
+      font-size: 14px; color: rgba(220,235,255,0.9);
+      line-height: 1.65; margin-bottom: 5px;
+      font-style: italic;
+    }
+    .example .zh {
+      font-size: 13px; color: var(--muted); line-height: 1.5;
+    }
+
+    .tip {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px; color: rgba(200,220,255,0.65);
+      line-height: 1.6;
+    }
+    .tip-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+    /* Color themes per card */
+    .c1 .card-stripe { background: linear-gradient(90deg, #5b8dee, #7eb8f7); }
+    .c1 .example { border-color: #5b8dee; }
+    .c2 .card-stripe { background: linear-gradient(90deg, #f77eb8, #f7a07e); }
+    .c2 .example { border-color: #f77eb8; }
+    .c3 .card-stripe { background: linear-gradient(90deg, #7ef7b8, #5bd4a0); }
+    .c3 .example { border-color: #7ef7b8; }
+    .c4 .card-stripe { background: linear-gradient(90deg, #f7e07e, #f7b85b); }
+    .c4 .example { border-color: #f7e07e; }
+    .c5 .card-stripe { background: linear-gradient(90deg, #c07ef7, #8b5bf7); }
+    .c5 .example { border-color: #c07ef7; }
+
+    /* Navigation */
+    .nav {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 16px 22px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+      margin-top: 36px;
+    }
+    .nav-label { font-size: 12px; color: var(--muted); }
+    .nav a {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 16px;
+      background: rgba(126,184,247,0.08);
+      border: 1px solid rgba(126,184,247,0.2);
+      border-radius: 8px;
+      color: var(--accent); font-size: 13px; font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav a:hover { background: rgba(126,184,247,0.15); }
+
+    /* Footer */
+    .footer {
+      text-align: center; margin-top: 48px;
+      font-size: 12px; color: rgba(107,122,153,0.6);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 480px) {
+      .word { font-size: 22px; }
+      .card-body { padding: 18px 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">📅 每日英语单词</div>
+    <h1>职场人际与沟通</h1>
+    <div class="header-meta">
+      2026年5月11日（周一）<span>·</span>第9期<span>·</span>今日主题：职场人际与沟通
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary">
+    今日5词聚焦「职场人际与沟通」场景，涵盖表达意见、协商分歧、建立关系等高频表达，<br>
+    掌握这些词汇，让你在英文会议和邮件中更从容、更有说服力。
+  </div>
+
+  <!-- Card 1: collaborate -->
+  <div class="card c1">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="word-row">
+        <span class="word">collaborate</span>
+        <span class="phonetic">/kəˈlæbəreɪt/</span>
+        <span class="pos">v. 动词</span>
+      </div>
+      <div class="meaning"><strong>合作；协作</strong><br>与他人共同努力完成某个项目或目标，强调团队配合而非单打独斗。</div>
+      <div class="example">
+        <div class="en">"The two departments need to <strong>collaborate</strong> more closely to launch the product on time."</div>
+        <div class="zh">两个部门需要更紧密地合作，才能按时推出产品。</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>词根拆解：<strong>col-</strong>（共同）+ <strong>labor</strong>（劳动）+ <strong>-ate</strong>（动词后缀）→ 共同劳动 = 合作。名词形式 <em>collaboration</em> 在职场文档、简历中极为常见。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2: compromise -->
+  <div class="card c2">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="word-row">
+        <span class="word">compromise</span>
+        <span class="phonetic">/ˈkɒmprəmaɪz/</span>
+        <span class="pos">n./v. 名词/动词</span>
+      </div>
+      <div class="meaning"><strong>妥协；折中方案 / 妥协达成</strong><br>双方各让一步，找到都能接受的中间方案，是解决分歧的关键能力。</div>
+      <div class="example">
+        <div class="en">"After an hour of discussion, we finally reached a <strong>compromise</strong> on the budget."</div>
+        <div class="zh">经过一个小时的讨论，我们终于就预算达成了妥协。</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>注意：<em>compromise</em> 还有"损害、危及"的意思（如 <em>compromise security</em> = 危及安全）。谈判场景用"折中"义，安全/质量场景用"损害"义，注意区分语境。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: delegate -->
+  <div class="card c3">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="word-row">
+        <span class="word">delegate</span>
+        <span class="phonetic">/ˈdelɪɡeɪt/ (v.) · /ˈdelɪɡət/ (n.)</span>
+        <span class="pos">v./n. 动词/名词</span>
+      </div>
+      <div class="meaning"><strong>授权；委派（任务）/ 代表；代理人</strong><br>把任务或职责交给他人处理；也指被授权出席的代表。</div>
+      <div class="example">
+        <div class="en">"A good manager knows how to <strong>delegate</strong> tasks without micromanaging."</div>
+        <div class="zh">一个好的管理者懂得如何授权，而不是事事插手。</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>动词和名词拼写相同但发音不同：动词末音节重读 <em>/ɡeɪt/</em>，名词末音节轻读 <em>/ɡət/</em>。类似规律的词还有 <em>estimate、moderate</em>，英语里很常见。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4: clarify -->
+  <div class="card c4">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="word-row">
+        <span class="word">clarify</span>
+        <span class="phonetic">/ˈklærɪfaɪ/</span>
+        <span class="pos">v. 动词</span>
+      </div>
+      <div class="meaning"><strong>澄清；阐明；说清楚</strong><br>消除误解或模糊之处，把意思表达得更清晰准确。</div>
+      <div class="example">
+        <div class="en">"Could you <strong>clarify</strong> what you mean by 'flexible deadline'? I want to make sure we're aligned."</div>
+        <div class="zh">您能说清楚"灵活截止日期"是什么意思吗？我想确认我们理解一致。</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>词根 <strong>clar</strong> 来自拉丁语"清晰"（同 <em>clear</em>）。在会议中礼貌追问时，<em>"Could you clarify…?"</em> 比 <em>"I don't understand"</em> 更专业、更得体。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5: proactive -->
+  <div class="card c5">
+    <div class="card-stripe"></div>
+    <div class="card-body">
+      <div class="word-row">
+        <span class="word">proactive</span>
+        <span class="phonetic">/prəʊˈæktɪv/</span>
+        <span class="pos">adj. 形容词</span>
+      </div>
+      <div class="meaning"><strong>主动的；积极预防的</strong><br>在问题发生之前就采取行动，而非被动等待或事后补救。</div>
+      <div class="example">
+        <div class="en">"Be <strong>proactive</strong> — don't wait for your manager to ask; send a progress update every Friday."</div>
+        <div class="zh">主动一点——不要等你的上司来问，每周五主动发进度更新。</div>
+      </div>
+      <div class="tip">
+        <span class="tip-icon">💡</span>
+        <span>对比记忆：<strong>pro-</strong>（提前）+ active → <em>proactive</em>（主动出击）；<strong>re-</strong>（事后）+ active → <em>reactive</em>（被动应对）。职场评价中出现 <em>proactive</em> 绝对是加分词！</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <span class="nav-label">← 往期单词</span>
+    <a href="daily-words-2026-04-27.html">← 4月27日（时间管理）</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>每日英语单词 · 由 WorkBuddy 自动整理推送</p>
+    <p>每天5词，积少成多，坚持就是进步 ✨</p>
+  </div>
+
+</div>
+</body>
+</html>
